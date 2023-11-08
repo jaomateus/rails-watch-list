@@ -24,7 +24,22 @@
       </div>
     <% end %>
   </div>
-  <hr class="my-5">
-  <div class="row">
+  <hr class="mt-5">
+  <div class="row text-white">
+    <div class="col-12 col-lg-6">
+      <h4 class="mb-4">Reviews</h4>
+      <% @list.reviews.each do |review| %>
+        <p><%= review.comment %></p>
+        <hr>
+      <% end %>
+    </div>
+    <div class="col-12 col-lg-6">
+      <h4 class="mb-4">Write your review</h4>
+      <%= simple_form_for [@list, @review] do |f| %>
+        <%= f.input :comment %>
+        <%= f.input :rating %>
+        <%= f.submit "Add Review", class: "btn btn-outline-light" %>
+      <% end %>
+    </div>
   </div>
 </div>

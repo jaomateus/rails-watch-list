@@ -17,8 +17,13 @@ a {
 
 body {
   background-color: $black;
+  padding-bottom: 200px;
 }
 
 hr {
   border-bottom: 1px solid white;
+}
+
+.form-label {
+  color: $white;
 }
